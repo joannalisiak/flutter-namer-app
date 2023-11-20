@@ -1,13 +1,11 @@
-<<<<<<< HEAD
-# flutter-namer-app
-=======
-# namer_app
+# Namer App
 
-A new Flutter project.
+First Flutter project.
 
-## Getting Started
+The application generates a random word pair and allows to save favourite pairs
 
-This project is a starting point for a Flutter application.
+## Resources
+
 
 A few resources to get you started if this is your first Flutter project:
 
@@ -17,4 +15,3 @@ A few resources to get you started if this is your first Flutter project:
 For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
->>>>>>> 68968ff (create new flutter project)
