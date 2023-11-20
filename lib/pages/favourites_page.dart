@@ -7,30 +7,47 @@ class FavouritesPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var appState = context.watch<AppState>();
-    var favourites = appState.favourites;
 
     var theme = Theme.of(context);
-    var styleLarge = theme.textTheme.headlineSmall!
-        .copyWith(color: theme.colorScheme.onBackground);
-    var styleSmall = theme.textTheme.bodyMedium!
-        .copyWith(color: theme.colorScheme.onBackground);
 
-    if (favourites.isEmpty) {
-      return Center(child: Text("No favourites yet", style: styleLarge));
+    if (appState.favourites.isEmpty) {
+      return Center(child: Text("No favourites yet"));
     }
 
-    return ListView(
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Padding(
           padding: const EdgeInsets.all(12),
-          child: Text("You have ${favourites.length} favourites:",
-              style: styleSmall),
+          child: Text(
+            "You have ${appState.favourites.length} favourites:",
+          ),
         ),
-        for (var favourite in favourites)
-          ListTile(
-            leading: Icon(Icons.favorite),
-            title: Text(favourite.asLowerCase, style: styleSmall),
-          )
+        Expanded(
+            child: GridView(
+                gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+                  maxCrossAxisExtent: 400,
+                  childAspectRatio: 400 / 80,
+                ),
+                children: [
+              for (var pair in appState.favourites)
+                ListTile(
+                  leading: IconButton(
+                    icon: Icon(
+                      Icons.delete_outline,
+                      semanticLabel: "Delete",
+                    ),
+                    color: theme.colorScheme.primary,
+                    onPressed: () {
+                      appState.removeFavourite(pair);
+                    },
+                  ),
+                  title: Text(
+                    pair.asLowerCase,
+                    semanticsLabel: pair.asPascalCase,
+                  ),
+                )
+            ]))
       ],
     );
   }
