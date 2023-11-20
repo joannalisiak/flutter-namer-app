@@ -3,12 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:namer_app/pages/favourites_page.dart';
 import 'package:namer_app/pages/generator_page.dart';
 
-class MyHomePage extends StatefulWidget {
+class HomePage extends StatefulWidget {
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  State<HomePage> createState() => HomePageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class HomePageState extends State<HomePage> {
   var selectedIndex = 0;
 
   @override

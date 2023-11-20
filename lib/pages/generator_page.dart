@@ -7,7 +7,7 @@ import 'package:namer_app/components/large_card.dart';
 class GeneratorPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    var appState = context.watch<MyAppState>();
+    var appState = context.watch<AppState>();
     var pair = appState.current;
 
     IconData icon;

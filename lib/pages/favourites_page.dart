@@ -6,7 +6,7 @@ import 'package:namer_app/app_state.dart';
 class FavouritesPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    var appState = context.watch<MyAppState>();
+    var appState = context.watch<AppState>();
     var favourites = appState.favourites;
 
     var theme = Theme.of(context);
