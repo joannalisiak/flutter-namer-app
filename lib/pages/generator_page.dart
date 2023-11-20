@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:namer_app/components/history_list.dart';
 import 'package:provider/provider.dart';
 
 import 'package:namer_app/app_state.dart';
@@ -21,6 +22,11 @@ class GeneratorPage extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
+          Expanded(
+            flex: 3,
+            child: HistoryList(),
+          ),
+          SizedBox(height: 12),
           LargeCard(pair: pair),
           SizedBox(height: 12),
           Row(
@@ -41,7 +47,8 @@ class GeneratorPage extends StatelessWidget {
                   },
                   child: Text("Next")),
             ],
-          )
+          ),
+          Spacer(flex: 2),
         ],
       ),
     );
