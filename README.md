@@ -2,7 +2,9 @@
 
 First Flutter project.
 
-The application generates a random word pair and allows to save favourite pairs
+The application generates a random word pair and allows to save favourite pairs.
+
+![GeneratorPage](./docs/images/generator_page.png)
 
 ## Resources
 
